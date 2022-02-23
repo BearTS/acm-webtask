@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    environment:
+      - PORT=3000
+      - MONGO_URL=mongodb://localhost:27017/myapp
+      - JWT_SECRET=somesecret
+      
+    ports:
+      - "${PORT}:${PORT}"
+    
