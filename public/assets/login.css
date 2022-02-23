@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding-top: 5rem;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  max-width: 25rem;
+  margin: auto;
+}
+/* class navbar */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

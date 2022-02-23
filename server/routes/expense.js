@@ -13,7 +13,13 @@ router.post('/add', auth, async (req, res) => {
     });
     try {
         await expense.save();
-        res.status(200).json(expense);
+        res.status(200).json(
+            {
+                status: 'ok',
+                message: 'added',
+                expense
+            }
+        );
     }
     catch (err) {
         console.log(err);
@@ -25,7 +31,10 @@ router.get('/get', auth, async (req, res) => {
     const user = await User.findById(req.user.id);
     try {
         const expenses = await Expense.find({ username: user.username });
-        res.status(200).json(expenses);
+        res.status(200).json({
+            expenses,
+            'status': 'ok'
+        });
     }
     catch (err) {
         console.log(err);
@@ -41,7 +50,8 @@ router.delete('/delete', auth, async (req, res) => {
         if (expense.username !== user.username) {
             return res.status(401).json({ msg: 'Not Authorized' });
         }
-        res.status(200).json({ msg: 'Deleted' });
+        await Expense.findByIdAndDelete(id);
+        res.status(200).json({ msg: 'Deleted', status: 'ok' });
     } catch (err) {
         console.log(err);
         res.status(500).send('Error in Deleting');

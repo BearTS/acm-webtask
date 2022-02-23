@@ -29,7 +29,7 @@ router.post('/signup', // Signup route
             const payload = { user: { id: user.id } };
             jwt.sign( payload, secret, { expiresIn: 10000 }, (err, token) => {
                 if (err) throw err;
-                res.status(200).json({ token }); 
+                res.status(200).json({ status: 'ok', token }); 
             });
             
         } catch (err) {
@@ -59,6 +59,7 @@ router.post('/login',
             jwt.sign(payload, secret, { expiresIn: 3600}, (err, token) => {
                 if (err) throw err;
                 res.status(200).json({
+                    status: 'ok',
                     token
                 });
             });

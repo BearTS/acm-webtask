@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To be done</title>
+    <link href="assets/login.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- add navbar  with home, signout and login -->
+<nav>
+      <div class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Expense Tracker</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="signup.html">Signup</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+    <!-- expense table with id expenseTable function getexpense-->
+    <main class="form-signin">
+        <table class="table table-striped table-dark" id="expenseTable">
+            <thead>
+                <tr>
+                    <th scope="col">Text</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col"></th>
+
+                </tr>
+            </thead>
+            <tbody id="expenseTable">
+            </tbody>
+            <!-- total amount -->
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td id="totalamount"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <!-- add expense -->
+    <main class="form-signin">
+        <form onsubmit="return addExpense()">
+          <h1 class="h3 mb-3 fw-normal">Add</h1>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="text" placeholder="gas">
+            <label for="floatingInput">Text</label>
+          </div>
+          <div class="form-floating">
+            <input type="number" class="form-control" id="amount" placeholder="Amount">
+            <label for="floatingPassword">Amount</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Add</button>
+        </form>
+      </main>
+
+      <script src="assets/static.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>
+</html>
